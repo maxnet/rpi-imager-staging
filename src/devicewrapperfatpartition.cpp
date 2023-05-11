@@ -378,7 +378,7 @@ bool DeviceWrapperFatPartition::getDirEntry(const QString &longFilename, struct 
             memcpy(lnamePartStr, l->LDIR_Name1, 10);
             memcpy(lnamePartStr+10, l->LDIR_Name2, 12);
 #pragma GCC diagnostics push
-#pragma GCC diagnostic ignored "-Wstringop-overflow="           
+#pragma GCC diagnostic ignored "-Wstringop-overflow=2"           
             memcpy(lnamePartStr+22, l->LDIR_Name3, 4);
 #pragma GCC diagnostics pop            
             filenameRead = lnamePart + filenameRead;
